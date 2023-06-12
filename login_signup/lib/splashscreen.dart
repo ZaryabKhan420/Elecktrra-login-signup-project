@@ -1,0 +1,34 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:login_signup/intropage.dart';
+
+class SplashScreen extends StatefulWidget {
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => IntroPage(),
+          ));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Image(image: AssetImage('assets/splash-screen.png')),
+      ),
+    );
+  }
+}
